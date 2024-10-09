@@ -4,29 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Site en Maintenance</title>
+  <title>Maintenance Mode</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body, html {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #3498db, #8e44ad);
-      color: #fff;
+    }
+
+    body, html {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #dfe6e9); /* Dégradé moderne */
+      color: #2d3436; /* Couleur de texte plus foncée */
       height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
+      animation: fadeIn 1s ease-in;
     }
 
     .container {
-      padding: 40px;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: #ffffff; /* Blanc élégant */
+      padding: 50px;
       border-radius: 15px;
-      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
       max-width: 500px;
       width: 90%;
-      animation: fadeIn 1s ease-in-out;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideIn 0.5s forwards 0.5s;
     }
 
     .profile-pic {
@@ -34,50 +43,74 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #fff;
+      border: 4px solid #b2bec3; /* Bordure moderne plus légère */
       margin-bottom: 20px;
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
 
     .profile-pic:hover {
-      transform: scale(1.1);
+      transform: scale(1.1); /* Agrandissement doux au survol */
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
-      color: #fff;
+      color: #34495e; /* Couleur principale plus foncée */
+      font-weight: 600;
     }
 
     p {
       font-size: 18px;
       margin-bottom: 20px;
-      color: #eee;
+      color: #636e72; /* Couleur de texte secondaire plus subtile */
     }
 
     .maintenance-message {
       font-size: 16px;
-      margin-bottom: 20px;
-      color: #f39c12;
-    }
-
-    .contact-info {
-      margin-top: 20px;
+      color: #d63031; /* Accent rouge modernisé */
+      font-weight: 500;
     }
 
     .contact-info a {
       text-decoration: none;
-      color: #fff;
+      color: #0984e3; /* Couleur bleue modernisée */
       font-size: 16px;
-      display: block;
+      display: inline-flex;
+      align-items: center;
       margin-bottom: 10px;
       transition: color 0.3s;
     }
 
     .contact-info a:hover {
-      color: #f39c12;
+      color: #74b9ff; /* Couleur plus claire au survol */
     }
 
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #b2bec3; /* Couleur discrète pour le footer */
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
     @media (max-width: 600px) {
       h1 {
         font-size: 22px;
@@ -90,29 +123,34 @@
         height: 100px;
       }
     }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 <body>
 
   <div class="container">
     <img src="picture.jpeg" alt="Your Profile Picture" class="profile-pic">
-    <h1>Abdessamad Bencheraik</h1>
+    <h1><span>Abdessamad</span> <span>Bencheraik</span></h1>
     <p>Génie Logiciel - Développeur Web & Mobile</p>
-    <p class="maintenance-message">Le site est actuellement en maintenance. Revenez bientôt !</p>
+    <p class="maintenance-message">Le site est actuellement en maintenance. Merci de revenir bientôt !</p>
     
     <div class="contact-info">
-      <a href="mailto:benc.abdessamad@gmail.com">📧 benc.abdessamad@gmail.com</a>
-      <a href="tel:+212708027362">📞 +212 708 027 362</a>
+      <a href="mailto:benc.abdessamad@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px">
+          <path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8L12 13L21 8M12 11L3 6H21L12 11M19 3H5C3.9 3 3 3.9 3 5V5.5L12 10.5L21 5.5V5C21 3.9 20.1 3 19 3Z"></path>
+        </svg>
+         benc.abdessamad@gmail.com
+      </a>
+      <a href="tel:+212708027362">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px">
+          <path d="M20 15.5C18.8 15.5 17.6 15.3 16.5 14.9C16.1 14.8 15.7 14.9 15.4 15.2L13.2 17.3C10.1 15.8 8.2 13.9 6.7 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9.1 7.5C8.7 6.4 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 12.3 10.7 20 19 20C19.5 20 20 19.5 20 19V15.5C20 15 19.5 14.5 19 14.5Z"></path>
+        </svg>
+         +212 708 027 362
+      </a>
     </div>
+    
+    <footer>
+      &copy; 2024 Abdessamad Bencheraik. Tous droits réservés.
+    </footer>
   </div>
 
 </body>
