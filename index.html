@@ -1,157 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Maintenance Mode</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body, html {
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #f0f4f8, #dfe6e9); /* Dégradé moderne */
-      color: #2d3436; /* Couleur de texte plus foncée */
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      overflow: hidden;
-      animation: fadeIn 1s ease-in;
-    }
-
-    .container {
-      background-color: #ffffff; /* Blanc élégant */
-      padding: 50px;
-      border-radius: 15px;
-      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
-      max-width: 500px;
-      width: 90%;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideIn 0.5s forwards 0.5s;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #b2bec3; /* Bordure moderne plus légère */
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.1); /* Agrandissement doux au survol */
-    }
-
-    h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-      color: #34495e; /* Couleur principale plus foncée */
-      font-weight: 600;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: #636e72; /* Couleur de texte secondaire plus subtile */
-    }
-
-    .maintenance-message {
-      font-size: 16px;
-      color: #d63031; /* Accent rouge modernisé */
-      font-weight: 500;
-    }
-
-    .contact-info a {
-      text-decoration: none;
-      color: #0984e3; /* Couleur bleue modernisée */
-      font-size: 16px;
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 10px;
-      transition: color 0.3s;
-    }
-
-    .contact-info a:hover {
-      color: #74b9ff; /* Couleur plus claire au survol */
-    }
-
-    footer {
-      margin-top: 30px;
-      font-size: 14px;
-      color: #b2bec3; /* Couleur discrète pour le footer */
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdessamad BenCheraik</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Abdessamad BenCheraik</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Abdessamad BenCheraik</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.jpeg" alt="Abdessamad profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hi, Im</p>
+        <h1 class="title">Abdessamad</h1>
+        <p class="section__text__p2">Software Engineering - Web and Mobile Developer</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('#')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/abdessamadbencheraik/'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="My Github profile"
+            class="icon"
+            onclick="location.href='https://github.com/Bencabdessamad'"
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./assets/profile-pic.jpeg"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <p>2+ years <br />Software Engineering</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <p>B. mobile application engineering<br />M. Sc and Artificial Intelligence</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am a passionate developer with a strong mastery of my field. My expertise allows me to deliver innovative digital solutions to your challenges, combining passion and technology. Holding a professional degree in mobile application engineering, I am currently pursuing a master's degree in Computer Science and Artificial Intelligence, further strengthening my skills on a solid foundation. My goal is to create high-performance applications tailored to user needs while staying abreast of the latest technological advancements.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Services</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>UX/UI Design</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Mobile Development</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Web Development</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Project Management</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Technical Skills</h2>
+            <div class="article-container">
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>Java</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>React</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>PostgreSQL</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img
+                  src="./assets/checkmark.png"
+                  alt="Experience icon"
+                  class="icon"
+                />
+                <div>
+                  <h3>React Native</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 16px;
-      }
-      .profile-pic {
-        width: 100px;
-        height: 100px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <img src="picture.jpeg" alt="Your Profile Picture" class="profile-pic">
-    <h1><span>Abdessamad</span> <span>Bencheraik</span></h1>
-    <p>Génie Logiciel - Développeur Web & Mobile</p>
-    <p class="maintenance-message">Le site est actuellement en maintenance. Merci de revenir bientôt !</p>
-    
-    <div class="contact-info">
-      <a href="mailto:benc.abdessamad@gmail.com">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px">
-          <path d="M21 8V19C21 20.1 20.1 21 19 21H5C3.9 21 3 20.1 3 19V8L12 13L21 8M12 11L3 6H21L12 11M19 3H5C3.9 3 3 3.9 3 5V5.5L12 10.5L21 5.5V5C21 3.9 20.1 3 19 3Z"></path>
-        </svg>
-         benc.abdessamad@gmail.com
-      </a>
-      <a href="tel:+212708027362">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px">
-          <path d="M20 15.5C18.8 15.5 17.6 15.3 16.5 14.9C16.1 14.8 15.7 14.9 15.4 15.2L13.2 17.3C10.1 15.8 8.2 13.9 6.7 10.8L8.8 8.6C9.1 8.3 9.2 7.9 9.1 7.5C8.7 6.4 8.5 5.2 8.5 4C8.5 3.5 8 3 7.5 3H4C3.5 3 3 3.5 3 4C3 12.3 10.7 20 19 20C19.5 20 20 19.5 20 19V15.5C20 15 19.5 14.5 19 14.5Z"></path>
-        </svg>
-         +212 708 027 362
-      </a>
-    </div>
-    
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#projects'"
+      />
+    </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-1.png"
+                alt="Project 1"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">SonsorNet - Agro</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Bencabdessamad/agro'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Bencabdessamad/agro'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-2.png"
+                alt="Project 2"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Etu.ia</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img
+                src="./assets/project-3.png"
+                alt="Project 3"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/'"
+              >
+                Live Demo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='./#contact'"
+      />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:examplemail@gmail.com">benc.abdessamad@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn icon"
+            class="icon contact-icon"
+          />
+          <p><a href="https://www.linkedin.com/in/abdessamadbencheraik/">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
     <footer>
-      &copy; 2024 Abdessamad Bencheraik. Tous droits réservés.
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Abdessamad BenCheraik - All Rights Reserved.</p>
     </footer>
-  </div>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
